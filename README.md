@@ -33,6 +33,8 @@ CS50 2020: FINAL PROJECT (HarvadX thru edX)
 
 # FINAL NOTE:
     In addition to this 'README', please check the 2 minute video, showcasing the webpage.
+    https://cs50.harvard.edu/x/2021/gallery/
+    https://www.youtube.com/watch?v=zkPIyiWQK7A&ab_channel=mfapRN
     
 
 Thanks CS50! It was a pleasure.
