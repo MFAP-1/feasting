@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <label>Symbol to quote:</label>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text" id="symbol">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submit" disabled>Quote</button>
+        <script>
+        document.querySelector('#symbol').onkeyup = function() {
+            if (document.querySelector('#symbol').value === '') {
+                document.querySelector('#submit').disabled = true;
+            } else {
+                document.querySelector('#submit').disabled = false;
+            }
+        }
+        </script>
+    </form>
+    <br>
+    <footer class="small text-center text-muted">
+        Need help choosing a stock symbol? Check the full list: <a href="https://iextrading.com/trading/eligible-symbols/" target="_blank">List of Symbols for New York Stock Exchange [NYSE].</a>
+    </footer>
+{% endblock %}

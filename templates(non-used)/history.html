@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <label>All-time history of Transactions:</label>
+    <br>
+    <table class="table table-striped table-dark table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">SYMBOL</th>
+                <th scope="col">NAME</th>
+                <th scope="col">SHARES</th>
+                <th scope="col">TYPE</th>
+                <th scope="col">UNIT PRICE (US$)</th>
+                <th scope="col">TOTAL VALUE (US$)</th>
+                <th scope="col">TRANSACTION DATETIME</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table %}
+                <tr>
+                    <td> <div id="table_index" class="count"></div> </td>
+                    <td style="text-align:left">{{row["symbol"]}}</td>
+                    <td style="text-align:left">{{row["stock_name"]}}</td>
+                    <td>{{row["shares"]}}</td>
+                    {% if row["price"] > 0 %}
+                        <td>SELL</td>
+                        <td>${{row["price"]}}</td>
+                    {% else %}
+                        <td>BUY</td>
+                        <td>- ${{row["price"] * -1}}</td>
+                    {% endif %}
+                    {% if row["total"] > 0 %}
+                        <td>${{row["total"]}}</td>
+                    {% else %}
+                        <td>- ${{row["total"] * -1}}</td>
+                    {% endif %}
+                    <td>{{row["datetime"]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        
+{% endblock %}

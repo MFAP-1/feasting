@@ -1,0 +1,52 @@
+
+-------------CONCLUÍDO:
+    (1) Add a limitação da nota como requisito para habilitar o botão do inserir;
+    (2) Tipo de lugar e tipo de refeição seria bom uma dropdown list;
+    (5) Otimizar o login e o register com o botão desativado
+    (3) Verificar se o lugar inserido já estava antes. Se sim, return apology;
+
+-------------PENDENTE:
+No "resultados":
+    (18) Conseguir fazer o loop do "for" dentro do SCRIPT
+    (20) Problema dos 27 "problems" no html de resultados dado a {%for%}. Possivelmente se eu passar isso fora do script para uma lista vai dar certo.
+No "inserir":
+    (4) Verificar a coerência da Cidade/Estado;
+    (21) Importar CSV file. https://flask.palletsprojects.com/en/1.1.x/patterns/fileuploads/
+No "Atualizar":
+    (8) No atualizar: Adicionar botaão +1 em adição à configuração atual--- TRABALHOSO! Tem alguns rascunhos comentados lá
+    (9) Adicionar mais opções no atualizar, exemplo nota
+No "Vista":
+    (10) MENU VISITA! ENTRAR PARA VER AS LISTAS DISPONÍVEIS 
+    (11) Filtrar a lista por tipo, etc etc
+Apology:
+    (13) Alterar a forma, trocar a figura por exemplo.
+No antigo "quote":
+    (14) Fazer queries no google? Nem que seja lançar o nome do lugar+cidade+Estado
+Gerais: 
+    (6) Gráficos
+    (7) Jogar os scripts para um arquivo js?
+    (19) Melhorar o nome das colunas da db
+layout.html:
+    (17) Alterar um pouco a estética para fugir do modelo CS50?
+Finalizações:
+    (12) Nota de rodapé (fotter) com e-mail de dúvidas, sugestões e feedbacks.
+    (15) Verificar de fato o que precisará ficar aqui no helpers.py;
+    (16) Limpar o código no application.py, tirando o que vem do modelo anterior.
+    (xx) Deploy the website: 
+
+
+-------------BRAINSTORMING:
+    * Nome: Our..., Our NightOut, OurFeast, Memory? Memories?
+    * Start: Levar/transformar a planilha de restaurantes com K para Web application”;
+    * Inspirações: Filmow, Tripadvisor, outras;
+    * Campos parecidos: Listagem, scores, observações...
+    * Gráficos e formas gráficas de visualização dos resultados;
+    * Permitir maior facilidade de compartilhar com os amigos;
+    * Página só para adicionar nova quantidade, atualizar valor diretamente??
+    * Consigo fazer query direto no Google pra vê o status do restaurante? Se é aberto ainda ou já fechou/falou?
+    * Querys  no Google
+    * Possibilidade de marcar usuários amigos que foram pro restaurante contigo. Não é só uma questão de namorados!! 
+    * Pode ser mais amplo. Ex.: com K fui 400. Gustavo, fui 10 em SP. Miguel e mãe outros 30 em gramado...
+    * Tem que ter mapa
+    * Integração com outras coisas?? Locais visitados.
+    * Alguma forma de verificar e comprovar a ida ao lugar. Tipo um selo a mais na page.

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Update
+{% endblock %}
+
+{% block main %}
+    <form action="/update" action="" method="post">
+        <label>Name of the place:</label>
+        <div class="form-group">
+            <select class="form-control" name="nome_lugar" id="nome_lugar">
+                <option disabled selected>Visited place</option>
+                {% for row in table %}
+                    <option value="{{row["nome_lugar"]}}">{{row["nome_lugar"]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <label>Upated number of times:</label>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="idas" placeholder="Upated number of times" type="number" min="0" step="1" id="idas">
+        </div>
+        <button class="btn btn-primary" type="submit" disabled id="submit">Update</button>
+    </form>
+    <!-- <br>
+    <form id="package_form" action="" method="post">
+        <div class="panel-body">
+            <input type="submit" name="action" value="add1">
+        </div>
+    </form> -->
+    <script>
+        document.querySelector('#idas').onkeyup = function() {
+            if (document.querySelector('#idas').value === '') {
+                document.querySelector('#submit').disabled = true;
+            } else {
+                document.querySelector('#submit').disabled = false;
+            }
+        }
+        // document.querySelector('#nome_lugar').onkeyup = function() {
+        //     if (document.querySelector('#nome_lugar').value !== 'Nome do lugar') {
+        //         document.querySelector('#submit2').disabled = false;
+        //     } else {
+        //         document.querySelector('#submit2').disabled = true;
+        //     }
+        // }
+    </script>
+{% endblock %}

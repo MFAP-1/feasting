@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://s.abcnews.com/images/Lifestyle/GTY_muffin_dog_as_160311_16x9_992.jpg" title="{{ top }}">
+
+    <p style="text-align: right;color:gray;font-size:small">Image credit: <a href="https://s.abcnews.com/images/Lifestyle/GTY_muffin_dog_as_160311_16x9_992.jpg">https://s.abcnews.com/images/Lifestyle/GTY_muffin_dog_as_160311_16x9_992.jpg</a></p>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <label>Quotation:</label>
+    <p>A share of {{quotation["name"]}} ({{quotation["symbol"]}}) cost ${{quotation["price"]}}.</p>
+    <label style="font-size:small"> As of {{now}} UTC.</label>
+
+{% endblock %}

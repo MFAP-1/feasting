@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Insert
+{% endblock %}
+
+{% block main %}
+    <form action="/insert" method="post">
+        <fieldset>
+            <!-- <legend >Lugar visitado a inserir:</legend> -->
+            <label>VISITED PLACE TO BE INSERTED:</label>
+            <br>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="nome_lugar" placeholder="Name of the place" type="text" id="nome_lugar">
+            </div>
+            <!-- <label>Cidade/Estado:</label> -->
+            <div class="form-group">
+                <input autocomplete="on" autofocus class="form-control" name="cidade" placeholder="City/State" type="text" id="cidade">
+            </div>
+            <!-- <label>Número de idas ao lugar:    Nota (entre 0 e 10):</label> -->
+            <div class="form-group">
+                <input autofocus class="form-control" name="idas" placeholder="Number of times" type="number" min="1" step="1" id="idas">
+                <input autofocus class="form-control" name="nota" placeholder="Score" type="number" min="0" step="0.5" max="10" id="nota">
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="tipo" id="tipo">
+                    <option disabled selected>Type</option>
+                    {% for item in CATEGORIAS %}
+                        <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+                <select class="form-control" name="refeicao" id="refeicao">
+                    <option disabled selected>Occasion</option>
+                    {% for item in OCASIOES %}
+                        <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="comentario" placeholder="Additional comments?" type="text">
+            </div>
+            <button class="btn btn-primary" id="submit" type="submit" disabled>Insert</button>
+        </fieldset>
+    </form>
+    <!-- <form action="/inserir" method="post">
+        <fieldset>
+            <label>IMPORT .csv FILE:</label>
+            <p>TO DO</p>
+        </fieldset>
+    </form> -->
+    <script>
+        document.onchange = function() {    
+            if (document.querySelector('#nome_lugar').value === '' || 
+            document.querySelector('#cidade').value === '' ||
+            document.querySelector('#idas').value === '' || 
+            document.querySelector('#tipo').value === 'Type' || 
+            document.querySelector('#refeicao').value === 'Occasion' ||
+            document.querySelector('#nota').value === '') 
+            {
+                document.querySelector('#submit').disabled = true;
+            } else {
+                document.querySelector('#submit').disabled = false;
+            }
+        }
+    </script>
+    <!-- <br>
+    <footer class="small text-center text-muted">
+        Need help choosing a stock symbol? Check the full list: <a href="https://iextrading.com/trading/eligible-symbols/" target="_blank">List of Symbols for New York Stock Exchange [NYSE].</a>
+    </footer> -->
+{% endblock %}

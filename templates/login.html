@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <label>Username:</label>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" id="username" type="text">
+        </div>
+        <label>Password:</label>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" id="password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submit" disabled>Log In</button>
+    </form>
+    <script>
+        document.onchange = function() {
+            if (document.querySelector('#username').value === '' || document.querySelector('#password').value === '')
+            {
+                document.querySelector('#submit').disabled = true;
+            } else {
+                document.querySelector('#submit').disabled = false;
+            }
+        }
+    </script>
+{% endblock %}
